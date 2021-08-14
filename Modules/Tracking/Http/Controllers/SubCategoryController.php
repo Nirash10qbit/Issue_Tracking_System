@@ -3,6 +3,7 @@
 namespace Modules\Tracking\Http\Controllers;
 
 use App\Http\Resources\DataResource;
+use Modules\Core\Entities\Category;
 use Spatie\QueryBuilder\QueryBuilder;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -16,11 +17,12 @@ class SubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * @param Category $category
      * @return AnonymousResourceCollection
      */
-    public function index(): AnonymousResourceCollection
+    public function index(Category $category): AnonymousResourceCollection
     {
-        $subcategories = QueryBuilder::for(Subcategory::class)
+        $subcategories = QueryBuilder::for($category->subcategories())
             ->paginate(10);
         return DataResource::collection($subcategories);
     }
@@ -28,35 +30,38 @@ class SubCategoryController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @param CreateSubcategoryRequest $CreateSubcategoryRequest
+     * @param CreateSubcategoryRequest $createSubcategoryRequest
+     * @param Category $category
      * @return DataResource
      */
-    public function store(CreateSubcategoryRequest $CreateSubcategoryRequest): DataResource
+    public function store(CreateSubcategoryRequest $createSubcategoryRequest,Category $category): DataResource
     {
-        $subcategory = Subcategory::create($CreateSubcategoryRequest->validated());
+        $subcategory = Subcategory::create(collect($createSubcategoryRequest->validated())
+        ->put('Category_id',$category->id)->toArray());
         return new DataResource($subcategory);
     }
 
     /**
      * Show the specified resource.
      * @param Subcategory $subcategory
+     * @param Category $category
      * @return DataResource
      */
-    public function show(Subcategory $subcategory): DataResource
+    public function show(Category $category, Subcategory $subcategory): DataResource
     {
-        $subcategory = Subcategory::whereId($subcategory->id)->firstOrFail();
+        Subcategory::whereCategoryId($category->id)->whereId($subcategory->id)->firstOrFail();
         return new DataResource($subcategory);
     }
 
 
-
     /**
      * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
+     * @param UpdateSubcategoryRequest $updateSubcategoryRequest
+     * @param Category $category
+     * @param Subcategory $subcategory
+     * @return DataResource
      */
-    public function update(UpdateSubcategoryRequest $updateSubcategoryRequest, Subcategory $subcategory): DataResource
+    public function update(UpdateSubcategoryRequest $updateSubcategoryRequest,Category $category,Subcategory $subcategory): DataResource
     {
         $subcategory->update($updateSubcategoryRequest->validated());
         return new DataResource($subcategory);
@@ -64,10 +69,11 @@ class SubCategoryController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @param Category $category
      * @param Subcategory $subcategory
      * @return DataResource
      */
-    public function destroy(Subcategory $subcategory)
+    public function destroy(Category $category,Subcategory $subcategory)
     {
         $subcategory->Delete();
         return new DataResource($subcategory);

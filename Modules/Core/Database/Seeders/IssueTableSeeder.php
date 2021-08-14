@@ -19,27 +19,33 @@ class IssueTableSeeder extends Seeder
 
         $issues = [
             [
-              'title' =>'Issues 01',
-              'body' => 'Issues 01 ',
-                'uuid' => 1,
+              'title' =>'Bug',
+              'body' => 'A problem which imparies or prevents the functions of the product.',
+                'uuid' => '7a342ca2-e79f-528e-6302-8f901b0b6888',
                 'slug' => 'Issues 01'
             ],
             [
-                'title' =>'Issues 02',
-                'body' => 'Issues 02 ',
-                'uuid' => 2,
+                'title' =>'Epic',
+                'body' => 'gh issue epic desc',
+                'uuid' => '396e0c46-09e4-4b19-97db-bd423774a4b3',
                 'slug' => 'Issues 02'
             ],
             [
-                'title' =>'Issues 03',
-                'body' => 'Issues 03 ',
-                'uuid' => 1,
+                'title' =>'Story',
+                'body' => 'gh issue story desc ',
+                'uuid' => '403aa1ab-9f70-44ec-bc08-5d5ac56bd8a5',
                 'slug' => 'Issues 03'
             ],
             [
-                'title' =>'Issues 04',
-                'body' => 'Issues 04 ',
-                'uuid' => 1,
+                'title' =>'Task',
+                'body' => 'A task that needs to be doneA task that needs to be done ',
+                'uuid' => 'f4d7d31f-fa83-431a-b30c-3e6cc37cc6ee',
+                'slug' => 'Issues 04'
+            ],
+            [
+                'title' =>'Sub-task',
+                'body' => 'The sub task of the issue',
+                'uuid' => 'f4d7d31f-fa83-431a-b30c-3e6cc376ee',
                 'slug' => 'Issues 04'
             ],
         ];

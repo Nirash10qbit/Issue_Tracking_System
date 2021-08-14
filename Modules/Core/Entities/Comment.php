@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 
 /**
  * Modules\Core\Entities\Comment
@@ -21,9 +22,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int $id
  * @property int $issue_id
  * @property string $body
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Modules\Core\Entities\Image|null $images
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read Image|null $images
  * @method static Builder|Comment whereBody($value)
  * @method static Builder|Comment whereCreatedAt($value)
  * @method static Builder|Comment whereId($value)

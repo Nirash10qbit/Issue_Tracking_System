@@ -61,7 +61,7 @@ return [
     |
     */
 
-    'home' => RouteServiceProvider::HOME,
+    'home' => env('CLIENT_URL'),
 
     /*
     |--------------------------------------------------------------------------

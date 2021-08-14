@@ -19,30 +19,58 @@ class CategoryTableSeeder extends Seeder
 
         $categories = [
             [
-                'name' => 'Category 01',
-                'description' => 'Category 01',
+                'name' => 'Chairsyde',
+                'description' => 'Project Chairsyde',
                 'subcategories' => [
                     [
-                        'name' => 'Sub Category 01',
-                        'description' => 'Issues Category 01'
+                        'name' => 'login page',
+                        'description' => 'Chairsyde login page'
                     ],
                     [
-                        'name' => 'Sub Category 02',
-                        'description' => 'Issues Category 02'
+                        'name' => 'Register page',
+                        'description' => 'Chairsyde Register page'
                     ]
                 ]
             ],
             [
-                'name' => 'Category 02',
-                'description' => 'Category 02',
+                'name' => 'Nimbel',
+                'description' => 'Project Nimbel',
                 'subcategories' => [
                     [
-                        'name' => 'Sub Category 03',
-                        'description' => 'Issues Category 03'
+                        'name' => 'login page',
+                        'description' => 'Nimbel login page'
                     ],
                     [
-                        'name' => 'Sub Category 04',
-                        'description' => 'Issues Category 04'
+                        'name' => 'Register page',
+                        'description' => 'Nimbel Register page'
+                    ]
+                ]
+            ],
+            [
+                'name' => 'Hyre',
+                'description' => 'Project Hyre',
+                'subcategories' => [
+                    [
+                        'name' => 'login page',
+                        'description' => 'Hyre login page'
+                    ],
+                    [
+                        'name' => 'Register page',
+                        'description' => 'Hyre Register page'
+                    ]
+                ]
+            ],
+            [
+                'name' => 'Classifier',
+                'description' => 'Project Classifier',
+                'subcategories' => [
+                    [
+                        'name' => 'login page',
+                        'description' => 'Classifier login page'
+                    ],
+                    [
+                        'name' => 'Register page',
+                        'description' => 'Classifier Register page'
                     ]
                 ]
             ],

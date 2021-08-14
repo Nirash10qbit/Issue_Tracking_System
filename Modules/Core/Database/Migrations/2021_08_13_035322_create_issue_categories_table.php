@@ -15,8 +15,8 @@ class CreateIssueCategoriesTable extends Migration
     {
         Schema::create('issue_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('issue_id')->references('id')->on('issues')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('issue_id')->constrained('issues')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

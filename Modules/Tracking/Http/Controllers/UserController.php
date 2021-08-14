@@ -4,8 +4,6 @@ namespace Modules\Tracking\Http\Controllers;
 
 use App\Http\Resources\DataResource;
 use App\Models\User;
-use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Routing\Controller;
 use Modules\Tracking\Http\Requests\CreateUserRequest;
@@ -38,7 +36,7 @@ class UserController extends Controller
      */
     public function store(CreateUserRequest $createUserRequest): DataResource
     {
-        $user = User::create($createUserRequest ->validated());
+        $user = User::create($createUserRequest->validated());
         return new DataResource($user);
     }
 
@@ -50,8 +48,8 @@ class UserController extends Controller
      */
     public function show(User $user): DataResource
     {
-       User::whereId($user->id)->firstOrFail();
-       return new DataResource($user);
+        User::whereId($user->id)->firstOrFail();
+        return new DataResource($user);
     }
 
 

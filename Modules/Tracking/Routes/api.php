@@ -24,7 +24,7 @@ use Modules\Tracking\Http\Controllers\UserController;
 //});
 
 Route::apiResource('/categories',  'CategoryController');
-Route::apiResource('/subcategories', 'SubCategoryController');
+Route::apiResource('/categories/{category}/subcategories', 'SubCategoryController');
 Route::apiResource('/comments', 'CommentController');
 Route::apiResource('/issues', 'IssueController');
 Route::apiResource('/images', 'ImageController');

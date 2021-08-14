@@ -19,7 +19,7 @@ class ImageTableSeeder extends Seeder
 
         $images = [
             [
-                'imageable_type' => 'image',
+                'imageable_type' => 'App\Issue',
                 'imageable_id' => 1,
                 'size' => 11,
                 'path' => 'AWS/path/to/image1',
@@ -27,7 +27,7 @@ class ImageTableSeeder extends Seeder
                 'extension' => 'jpg',
             ],
             [
-                'imageable_type' => 'image',
+                'imageable_type' => 'App\Issue',
                 'imageable_id' => 2,
                 'size' => 12,
                 'path' => 'AWS/path/to/image2',
@@ -35,7 +35,7 @@ class ImageTableSeeder extends Seeder
                 'extension' => 'jpg',
             ],
             [
-                'imageable_type' => 'image',
+                'imageable_type' => 'App\comment',
                 'imageable_id' => 3,
                 'size' => 13,
                 'path' => 'AWS/path/to/image3',
