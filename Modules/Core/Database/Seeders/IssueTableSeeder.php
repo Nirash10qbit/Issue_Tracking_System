@@ -20,7 +20,7 @@ class IssueTableSeeder extends Seeder
         $issues = [
             [
               'title' =>'Bug',
-              'body' => 'A problem which imparies or prevents the functions of the product.',
+              'body' => 'A problem ',
                 'uuid' => '7a342ca2-e79f-528e-6302-8f901b0b6888',
                 'slug' => 'Issues 01'
             ],
@@ -38,7 +38,7 @@ class IssueTableSeeder extends Seeder
             ],
             [
                 'title' =>'Task',
-                'body' => 'A task that needs to be doneA task that needs to be done ',
+                'body' => 'A task that  ',
                 'uuid' => 'f4d7d31f-fa83-431a-b30c-3e6cc37cc6ee',
                 'slug' => 'Issues 04'
             ],
